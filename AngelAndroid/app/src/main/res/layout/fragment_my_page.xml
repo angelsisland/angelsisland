@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/my_page_background"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/island_blue"
+        android:layout_marginBottom="25.3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/my_page_activity_guide"
+        android:layout_marginTop="18.6dp"
+        android:layout_marginLeft="26.6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/nickname_back">
+
+        <TextView
+            android:id="@+id/my_page_profile_name"
+            android:text="닉네임"
+            android:textSize="17sp"
+            android:layout_marginRight="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/my_page_profile_deco"
+            android:text="님의 정보"
+            android:textSize="17sp"
+            android:layout_alignBaseline="@+id/my_page_profile_name"
+            android:layout_toRightOf="@+id/my_page_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/my_page_profile_img"
+        android:layout_marginTop="69dp"
+        android:layout_below="@+id/my_page_activity_guide"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/babyangel_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="라파엘"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/my_page_profile_img"
+        android:id="@+id/my_page_status_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        android:layout_below="@id/my_page_status_label"
+        android:id="@+id/my_page_level_progress"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/levelup_zero"
+        android:layout_width="300dp"
+        android:layout_height="30dp" />
+
+    <RelativeLayout
+        android:id="@+id/my_page_remain_wings"
+        android:layout_below="@id/my_page_level_progress"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_page_next_status"
+            android:text="Kid Angel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/my_page_next_status_deco"
+            android:layout_toRightOf="@+id/my_page_next_status"
+            android:layout_centerHorizontal="true"
+            android:text=" 까지 남은 깃털 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/my_page_next_status_remain"
+            android:text="100"
+            android:layout_toRightOf="@id/my_page_next_status_deco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_toRightOf="@+id/my_page_next_status_remain"
+            android:text=" 개"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="81.3dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/my_page_received_praise"
+            android:background="@drawable/goodjob_icon"
+            android:layout_marginRight="13.3dp"
+            android:text="내가 받은 칭찬"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/my_page_received_comfort"
+            android:text="내가 받은 위로"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/cheerup_icon"
+            android:layout_toRightOf="@id/my_page_received_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

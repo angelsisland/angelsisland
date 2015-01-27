@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="20dp">
+    <TextView
+        android:id="@+id/writing_body"
+        android:text="어제 빅이슈 아저씨께 따뜻한커피 한 잔 사드렸어요~^^"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+    <EditText
+        android:id="@+id/writing_comment_edit"
+        android:hint="칭찬을 써주세요."
+        android:layout_below="@+id/writing_body"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/writing_comment_commit"
+        android:text="칭찬하기"
+        android:layout_toRightOf="@id/writing_comment_edit"
+        android:layout_alignBaseline="@id/writing_comment_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

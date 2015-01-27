@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/writing_worry_profile_image"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sad_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+    <TextView
+        android:id="@+id/writing_worry_title_text"
+        android:text="제목"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/writing_worry_profile_image"
+        android:textSize="23sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/writing_worry_title_edit"
+        android:singleLine="true"
+        android:layout_below="@+id/writing_worry_profile_image"
+        android:layout_toRightOf="@+id/writing_worry_title_text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/writing_box"
+        android:layout_below="@+id/writing_worry_title_text"
+        android:background="#BBCCFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp">
+        <EditText
+            android:id="@+id/writing_worry_body_edit"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="left|top"
+            android:hint="오늘하루 당신이 자랑하고 싶은 일을 적어주세요."/>
+        <Button
+            android:id="@+id/writing_worry_add_picture"
+            android:text="사진"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/writing_worry_commit"
+            android:text="올리기"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+</RelativeLayout>

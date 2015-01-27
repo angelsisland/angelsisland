@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/image_back"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/main_button_box" />
+
+    <LinearLayout
+        android:id="@+id/main_button_box"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/img_button1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/mypage_icon"
+            android:background="@drawable/mypage_back"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/img_button2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/writing_icon"
+            android:background="@drawable/writing_back"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/img_button3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/more_icon"
+            android:background="@drawable/more_back"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>
