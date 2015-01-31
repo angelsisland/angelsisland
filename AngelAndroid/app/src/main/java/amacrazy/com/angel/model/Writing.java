@@ -7,9 +7,9 @@ public class Writing {
     private String category;
     private String title;
     private String contents;
-    private String photo;
+    private byte[] photo;
 
-    public Writing(String category, String title, String contents, String photo) {
+    public Writing(String category, String title, String contents, byte[] photo) {
         this.category = category;
         this.title = title;
         this.contents = contents;
@@ -28,7 +28,7 @@ public class Writing {
         return contents;
     }
 
-    public String getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 }

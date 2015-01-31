@@ -118,7 +118,7 @@
 
         <Button
             android:id="@+id/my_page_received_praise"
-            android:background="@drawable/goodjob_icon"
+            android:background="@drawable/mypage_goodjob_icon"
             android:layout_marginRight="13.3dp"
             android:text="내가 받은 칭찬"
             android:textSize="12sp"
@@ -131,7 +131,7 @@
             android:text="내가 받은 위로"
             android:textSize="12sp"
             android:textColor="#FFFFFF"
-            android:background="@drawable/cheerup_icon"
+            android:background="@drawable/mypage_cheerup_icon"
             android:layout_toRightOf="@id/my_page_received_praise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

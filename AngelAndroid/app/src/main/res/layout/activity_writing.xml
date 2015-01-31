@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/writing_praise_profile_image"
+        android:layout_marginTop="33dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/goodjob_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/writing_praise_title_box"
+        android:layout_width="306.6dp"
+        android:layout_height="39.3dp"
+        android:layout_marginTop="19.3dp"
+        android:background="@drawable/subject"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/writing_praise_profile_image">
+
+        <TextView
+            android:id="@+id/writing_praise_title_text"
+            android:text="제목"
+            android:gravity="center"
+            android:background="@drawable/subject_2"
+            android:textSize="23sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/writing_praise_title_edit"
+            android:singleLine="true"
+            android:background="@null"
+            android:textSize="17sp"
+            android:layout_alignBaseline="@id/writing_praise_title_text"
+            android:layout_width="0dp"
+            android:layout_toRightOf="@+id/writing_praise_title_text"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/writing_body_box"
+        android:layout_width="0dp"
+        android:layout_height="198dp"
+        android:layout_alignLeft="@+id/writing_praise_title_box"
+        android:layout_alignRight="@+id/writing_praise_title_box"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginTop="19.3dp"
+        android:background="@drawable/text_box"
+        android:layout_below="@id/writing_praise_title_box">
+
+        <EditText
+            android:id="@+id/writing_praise_body_edit"
+            android:hint="오늘 하루 당신이 .. "
+            android:gravity="left|top"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/writing_picture"
+        android:layout_below="@+id/writing_body_box"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="19.3dp"
+        android:layout_alignLeft="@id/writing_body_box"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/writing_attach_image"
+            android:background="@drawable/photo_graybox"
+            android:layout_width="96dp"
+            android:layout_height="80dp" />
+
+        <ImageView
+            android:id="@+id/writing_praise_add_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/photo_icon" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/writing_picture"
+        android:layout_toRightOf="@+id/writing_picture"
+        android:layout_marginLeft="6.6dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/writing_praise_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/writing_bluebox" />
+
+        <ImageView
+            android:src="@drawable/writing_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

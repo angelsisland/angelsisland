@@ -29,7 +29,7 @@
         <item name="actionModeBackground">@drawable/cab_background_top_custom_actionbar</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_custom_actionbar</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Custom_actionbar</item>
-
+        <item name="android:windowContentOverlay">@null</item>
         
     </style>
 

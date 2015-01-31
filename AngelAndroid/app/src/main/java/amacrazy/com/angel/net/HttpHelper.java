@@ -82,13 +82,19 @@ public class HttpHelper {
         }
     }
 
+    public byte[] convertBitmapToBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] bytes = stream.toByteArray();
+        return bytes;
+    }
+
     public Bitmap byteArrayToBitmap( byte[] $byteArray ) {
         Bitmap bitmap = BitmapFactory.decodeByteArray($byteArray, 0, $byteArray.length) ;
         return bitmap ;
     }
 
     public void downloadImg(String servletName) {
-
          //Bitmap bitmap = BitmapFactory.decodeByteArray( $byteArray, 0, $byteArray.length ) ;
          //return bitmap;
     }

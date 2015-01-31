@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,8 +23,8 @@ import amacrazy.com.angel.net.HttpHelper;
  */
 public class WritingPraiseActivity extends ActionBarActivity implements View.OnClickListener {
 
-    Button button1;
-    Button button2;
+    ImageView button1;
+    ImageView button2;
 
     EditText titleEdit;
     EditText bodyEdit;
@@ -35,9 +34,9 @@ public class WritingPraiseActivity extends ActionBarActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_writing_praise);
-        button1 = (Button) findViewById(R.id.writing_praise_add_picture);
-        button2 = (Button) findViewById(R.id.writing_praise_commit);
+        setContentView(R.layout.activity_writing);
+        button1 = (ImageView) findViewById(R.id.writing_praise_add_picture);
+        button2 = (ImageView) findViewById(R.id.writing_praise_commit);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
@@ -73,7 +72,8 @@ public class WritingPraiseActivity extends ActionBarActivity implements View.OnC
             try {
                 attachImg = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 ImageView image = (ImageView) findViewById(R.id.writing_attach_image);
-                image.setVisibility(View.VISIBLE);
+                ImageView image2 = (ImageView) findViewById(R.id.writing_praise_add_picture);
+                image2.setVisibility(View.GONE);
                 image.setImageBitmap(attachImg);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -91,10 +91,10 @@ public class WritingPraiseActivity extends ActionBarActivity implements View.OnC
         String title = titleEdit.getText().toString();
         String contents = bodyEdit.getText().toString();
         String photo = null;
-        Writing writing = new Writing(category, title, contents, photo);
         HttpHelper httpHelper = new HttpHelper();
-        //httpHelper.connect("/api/write", "POST", writing, null);
-        //httpHelper.uploadImg("/api/upload", attachImg);
+        byte[] bytes = httpHelper.convertBitmapToBytes(attachImg);
+        Writing writing = new Writing(category, title, contents, bytes);
+        httpHelper.connect("/api/write", "POST", writing, null);
         //사진 전송하기
 
 
