@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import amacrazy.com.angel.R;
-import amacrazy.com.angel.activity.WritingPraiseActivity;
-import amacrazy.com.angel.activity.WritingWorryActivity;
+import amacrazy.com.angel.activity.WritingActivity;
+import amacrazy.com.angel.util.FontUtil;
 
 /**
  * Created by choi on 2015. 1. 23..
@@ -29,6 +29,7 @@ public class SelectWritingFragment extends Fragment implements View.OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_select_writing, null);
+        FontUtil.setGlobalFont((ViewGroup) v);
         context = getActivity().getApplicationContext();
         selectIcon1 = (ImageView)v.findViewById(R.id.select_praise_img);
         selectIcon2 = (ImageView)v.findViewById(R.id.select_proud_img);
@@ -45,15 +46,15 @@ public class SelectWritingFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int viewId = v.getId();
+        Intent intent = new Intent(context, WritingActivity.class);
         switch(viewId) {
             case R.id.select_praise_img:
-                Intent intent = new Intent(context, WritingPraiseActivity.class);
-                startActivity(intent);
+                intent.putExtra("category", "praise");
                 break;
             case R.id.select_proud_img:
-                Intent intent2 = new Intent(context, WritingWorryActivity.class);
-                startActivity(intent2);
+                intent.putExtra("category", "worry");
                 break;
         }
+        startActivity(intent);
     }
 }

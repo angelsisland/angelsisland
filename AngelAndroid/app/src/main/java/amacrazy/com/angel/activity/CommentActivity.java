@@ -1,6 +1,5 @@
 package amacrazy.com.angel.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,11 +8,12 @@ import android.widget.EditText;
 import amacrazy.com.angel.R;
 import amacrazy.com.angel.model.Comment;
 import amacrazy.com.angel.net.HttpHelper;
+import amacrazy.com.angel.util.FontActivity;
 
 /**
  * Created by choi on 2015. 1. 26..
  */
-public class CommentActivity extends Activity implements View.OnClickListener{
+public class CommentActivity extends FontActivity implements View.OnClickListener{
     EditText commentEdit;
     Button button;
 

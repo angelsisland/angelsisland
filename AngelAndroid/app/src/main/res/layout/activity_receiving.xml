@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+
+<RelativeLayout
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/receiving_top"
+        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/left_wing"
+            android:layout_toLeftOf="@+id/receiving_logo"
+            android:src="@drawable/wing_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/receiving_logo"
+            android:text="내가 제일 잘 나가"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_toRightOf="@+id/receiving_logo"
+            android:src="@drawable/wing_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/receiving_list"
+        android:layout_below="@+id/receiving_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43.3dp"
+        android:paddingTop="21dp"
+        android:paddingBottom="12.3dp"
+        android:background="@drawable/board_back"
+        android:layout_width="306.6dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="27dp"/>
 
 </RelativeLayout>

@@ -1,12 +1,11 @@
 package amacrazy.com.angel.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.widget.Toast;
 
 import com.facebook.AppEventsLogger;
 import com.facebook.Request;
@@ -17,21 +16,26 @@ import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
 import amacrazy.com.angel.R;
-import amacrazy.com.angel.fragment.FacebookFragment;
+import amacrazy.com.angel.util.FontActivity;
+import amacrazy.com.angel.util.FontUtil;
 
 /**
  * Created by choi on 2015. 1. 22..
  */
-public class LoadingActivity extends Activity {
+public class LoadingActivity extends FontActivity {
 
-    private FacebookFragment facebookFragment;
     LoginButton authButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+        prepare();
         startLoading();
+    }
+
+    private void prepare() {
+        FontUtil.extraBold = Typeface.createFromAsset(getAssets(), "NanumGothicExtraBold.ttf.mp3");
     }
 
     @Override
@@ -64,7 +68,6 @@ public class LoadingActivity extends Activity {
                     @Override
                     public void call(Session session, SessionState state, Exception exception) {
                         if (session.isOpened()) {
-
                             Request.newMeRequest(session, new Request.GraphUserCallback() {
                                 @Override
                                 public void onCompleted(GraphUser user, Response response) {
@@ -76,20 +79,37 @@ public class LoadingActivity extends Activity {
                                         editor.putString("firstName", user.getFirstName());
                                         editor.putString("lastName", user.getLastName());
                                         editor.commit();
-                                        Toast.makeText(getApplicationContext(), user.getName().toString(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }).executeAsync();
-                            String token = session.getAccessToken();
+
+                            //String token = session.getAccessToken();
                             //token을 서버로 보내기.
-                            Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+
+                            /*원래는 user.id로 sever에 닉네임이 있는지 없는지 검사.
+                            true일 경우 user정보를 가져와 저장한 후 MainActivity 실행
+                            false일 경우 일단 user정보 넘기고 opening activity를 실행
+                            */
+                            Intent intent = new Intent();
+                            SharedPreferences info = getSharedPreferences("info", MODE_PRIVATE);
+                            boolean isFirst = true;
+
+
+                            if (isFirst) {
+                                info.edit().putBoolean("isFirst", false).commit();
+                                intent.setClass(LoadingActivity.this, OpeningActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                intent.setClass(LoadingActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
                         }
                     }
                 });
             }
-        }.sendEmptyMessageDelayed(0,3000);
+        }.sendEmptyMessageDelayed(0, 500);
     }
 
     @Override

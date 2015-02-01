@@ -7,9 +7,10 @@ public class Writing {
     private String category;
     private String title;
     private String contents;
-    private byte[] photo;
+    private String photo;
+    private int commentNum;
 
-    public Writing(String category, String title, String contents, byte[] photo) {
+    public Writing(String category, String title, String contents, String photo) {
         this.category = category;
         this.title = title;
         this.contents = contents;
@@ -28,7 +29,7 @@ public class Writing {
         return contents;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 }

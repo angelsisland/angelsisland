@@ -26,7 +26,7 @@
             android:text="제목"
             android:gravity="center"
             android:background="@drawable/subject_2"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -35,7 +35,8 @@
             android:id="@+id/writing_praise_title_edit"
             android:singleLine="true"
             android:background="@null"
-            android:textSize="17sp"
+            android:textSize="16sp"
+            android:textColor="#414141"
             android:layout_alignBaseline="@id/writing_praise_title_text"
             android:layout_width="0dp"
             android:layout_toRightOf="@+id/writing_praise_title_text"
@@ -61,17 +62,18 @@
 
         <EditText
             android:id="@+id/writing_praise_body_edit"
-            android:hint="오늘 하루 당신이 .. "
+            android:hint="무엇이든 이야기 해보세요"
+            android:textColor="#414141"
+            android:textSize="16sp"
             android:gravity="left|top"
             android:background="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 
-
     <RelativeLayout
-        android:id="@+id/writing_picture"
+        android:id="@+id/writing_attach"
         android:layout_below="@+id/writing_body_box"
         android:layout_width="wrap_content"
         android:layout_marginTop="19.3dp"
@@ -79,13 +81,13 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/writing_attach_image"
+            android:id="@+id/writing_attach_back"
             android:background="@drawable/photo_graybox"
             android:layout_width="96dp"
             android:layout_height="80dp" />
 
         <ImageView
-            android:id="@+id/writing_praise_add_picture"
+            android:id="@+id/writing_attach_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -96,13 +98,13 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/writing_picture"
-        android:layout_toRightOf="@+id/writing_picture"
+        android:layout_alignTop="@+id/writing_attach"
+        android:layout_toRightOf="@+id/writing_attach"
         android:layout_marginLeft="6.6dp"
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/writing_praise_commit"
+            android:id="@+id/writing_commit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/writing_bluebox" />

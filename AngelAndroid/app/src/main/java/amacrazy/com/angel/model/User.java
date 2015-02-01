@@ -5,4 +5,5 @@ package amacrazy.com.angel.model;
  */
 public class User {
     int level;
+    String nickname;
 }

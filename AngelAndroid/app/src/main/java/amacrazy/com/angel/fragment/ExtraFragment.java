@@ -15,6 +15,7 @@ import amacrazy.com.angel.model.Comment;
 import amacrazy.com.angel.model.User;
 import amacrazy.com.angel.model.Writing;
 import amacrazy.com.angel.net.HttpHelper;
+import amacrazy.com.angel.util.FontUtil;
 
 /**
  * Created by choi on 2015. 1. 23..
@@ -30,6 +31,7 @@ public class ExtraFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_extra, null);
+        FontUtil.setGlobalFont((ViewGroup) v);
         testButton = (Button)v.findViewById(R.id.test_button);
         testButton.setOnClickListener(this);
         return v;

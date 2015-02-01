@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +14,10 @@ import amacrazy.com.angel.fragment.ExtraFragment;
 import amacrazy.com.angel.fragment.HomeFragment;
 import amacrazy.com.angel.fragment.MyPageFragment;
 import amacrazy.com.angel.fragment.SelectWritingFragment;
+import amacrazy.com.angel.util.FontActionbarActivity;
 
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+public class MainActivity extends FontActionbarActivity implements View.OnClickListener{
 
     int containerId = R.id.main_frame;
 

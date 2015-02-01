@@ -8,12 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
-import amacrazy.com.angel.activity.BoardPraiseActivity;
 import amacrazy.com.angel.R;
-import amacrazy.com.angel.activity.BoardWorryActivity;
+import amacrazy.com.angel.activity.BoardActivity;
 import amacrazy.com.angel.activity.WarmLetterActivity;
+import amacrazy.com.angel.util.FontUtil;
 
 /**
  * Created by choi on 2015. 1. 23..
@@ -25,28 +27,36 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     ImageView imgView3;
     Context context;
 
+    ImageView waveView1;
+    ImageView waveView2;
+
+
     @Override
     public void onClick(View v) {
         int viewId = v.getId();
+        Class activityClass = null;
+        Intent intent = new Intent();
         switch(viewId) {
             case R.id.main_praise1:
-                Intent intent = new Intent(context, BoardPraiseActivity.class);
-                startActivity(intent);
+                activityClass = BoardActivity.class;
+                intent.putExtra("category", "praise");
                 break;
             case R.id.main_praise2:
-                Intent intent2 = new Intent(context, BoardWorryActivity.class);
-                startActivity(intent2);
+                activityClass = BoardActivity.class;
+                intent.putExtra("category", "worry");
                 break;
             case R.id.main_praise3:
-                Intent intent3 = new Intent(context, WarmLetterActivity.class);
-                startActivity(intent3);
+                activityClass = WarmLetterActivity.class;
                 break;
         }
+        intent.setClass(context, activityClass);
+        startActivity(intent);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, null);
+        FontUtil.setGlobalFont((ViewGroup)v);
         imgView1 = (ImageView)v.findViewById(R.id.main_praise1);
         imgView2 = (ImageView)v.findViewById(R.id.main_praise2);
         imgView3 = (ImageView)v.findViewById(R.id.main_praise3);
@@ -54,6 +64,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         imgView2.setOnClickListener(this);
         imgView3.setOnClickListener(this);
         context = getActivity().getApplicationContext();
+
+        waveView1 = (ImageView)v.findViewById(R.id.white_wave);
+        waveView2 = (ImageView)v.findViewById(R.id.white_wave2);
+        Animation anim = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_PARENT, 0, Animation.RELATIVE_TO_PARENT, 0);
+        anim.setDuration(20000);
+        anim.setRepeatCount(-1);
+        waveView1.startAnimation(anim);
+        waveView2.startAnimation(anim);
         return v;
     }
 }
