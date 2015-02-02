@@ -47,6 +47,8 @@ public class OpeningDialog extends Dialog implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_opening);
 
+        findViewById(R.id.dialog_opening_next_button).setEnabled(false);
+
         container = (RelativeLayout)findViewById(R.id.dialog_opening_edit_container);
         arrow = (ImageView)findViewById(R.id.dialog_opening_arrow);
         commit = (ImageView)findViewById(R.id.dialog_opening_commit);
@@ -54,9 +56,8 @@ public class OpeningDialog extends Dialog implements View.OnClickListener {
         text = (TextView)findViewById(R.id.dialog_opening_text);
         edit = (EditText)findViewById(R.id.dialog_opening_name_edit);
 
-        arrow.setOnClickListener(this);
         commit.setOnClickListener(this);
-
+        findViewById(R.id.dialog_opening_next_button).setOnClickListener(this);
     }
 
     @Override
@@ -72,9 +73,10 @@ public class OpeningDialog extends Dialog implements View.OnClickListener {
                 //network로 user 보내기
                 container.setVisibility(View.GONE);
                 arrow.setVisibility(View.VISIBLE);
-                arrow.performClick();
+                findViewById(R.id.dialog_opening_next_button).setEnabled(true);
+                text.setText(message[0]);
                 break;
-            case R.id.dialog_opening_arrow:
+            case R.id.dialog_opening_next_button:
                 if(count == 4) {
                     getOwnerActivity().stopService(new Intent(getOwnerActivity(), AngelBackgroundSong.class));
                     Intent intent = new Intent(getOwnerActivity(), MainActivity.class);

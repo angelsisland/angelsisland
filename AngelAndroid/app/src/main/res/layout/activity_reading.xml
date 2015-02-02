@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <RelativeLayout
+        android:id="@+id/reading_profile_container"
+        android:layout_marginTop="88.6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/reading_profile"
+            android:src="@drawable/q_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/plus_icon"
+            android:layout_toRightOf="@+id/reading_profile"
+            android:layout_alignBottom="@+id/reading_profile"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_marginTop="14.3dp"
+            android:layout_below="@+id/reading_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/nickname_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/reading_nick"
+                android:text="TEDIOUS"
+                android:textColor="#5B5B5B"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="14.3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/reading_profile_container"
+        android:background="@drawable/text_box"
+        android:layout_width="307dp"
+        android:layout_height="197.6dp"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/reading_text_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bluetext_box"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+        <ImageView
+            android:id="@+id/reading_edit_image"
+            android:layout_marginLeft="26dp"
+            android:layout_centerVertical= "true"
+            android:background="@drawable/text_box2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/reading_edit"
+            android:singleLine="true"
+            android:layout_width="0dp"
+            android:background="@null"
+            android:layout_alignLeft="@id/reading_edit_image"
+            android:layout_alignRight="@+id/reading_edit_image"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@id/reading_edit_image"
+            />
+        <RelativeLayout
+            android:id="@+id/reading_send"
+            android:layout_width="0dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/reading_edit_image"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="SEND"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        </RelativeLayout>
+
+</RelativeLayout>

@@ -54,6 +54,7 @@ public class BoardActivity extends FontActionbarActivity implements View.OnClick
         adapter.add(new Writing("praise", "오늘 착한 일 넷 째애!!dummy", "dummy data", null));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
+        setActionBarTitle();
     }
 
     @Override
@@ -67,15 +68,27 @@ public class BoardActivity extends FontActionbarActivity implements View.OnClick
                 break;
             case R.id.board_received:
                 clas = ReceivedActivity.class;
-                intent.putExtra("category", category);
                 break;
         }
+        intent.putExtra("category", category);
         intent.setClass(this, clas);
         startActivity(intent);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ReadingActivity.class);
+        intent.putExtra("category", category);
+        intent.putExtra("wid", list.get(position).getWid());
+        intent.putExtra("uid", list.get(position).getUid());
+        intent.putExtra("contents", list.get(position).getContents());
+        startActivity(intent);
+    }
 
+    private void setActionBarTitle() {
+        if(category.equals("praise"))
+            getSupportActionBar().setTitle("천사들의 이야기");
+        else
+            getSupportActionBar().setTitle("천사들의 손길");
     }
 }

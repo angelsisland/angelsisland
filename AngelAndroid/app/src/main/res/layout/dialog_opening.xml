@@ -65,14 +65,21 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/dialog_opening_arrow"
-        android:visibility="gone"
+    <RelativeLayout
+        android:id="@+id/dialog_opening_next_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="33.3dp"
-        android:background="@drawable/arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginBottom="33.3dp">
+        <ImageView
+            android:id="@+id/dialog_opening_arrow"
+            android:visibility="gone"
+            android:background="@drawable/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+
 
 </RelativeLayout>

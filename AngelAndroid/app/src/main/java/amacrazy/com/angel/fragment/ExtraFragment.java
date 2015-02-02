@@ -74,7 +74,7 @@ public class ExtraFragment extends Fragment implements View.OnClickListener{
 
     private void uploadComment() {
         new Thread(new Runnable() {
-            Comment comment = new Comment(1, "comment");
+            Comment comment = new Comment(1, "comment", "writer");
             @Override
             public void run() {
                 new HttpHelper().connect("", "POST", comment, null);

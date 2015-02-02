@@ -7,8 +7,8 @@
     <TextView
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
-        android:textSize="40sp"
-        android:text="개발 중... 'ㅁ' \n\n개발자 David, KJW\n디자이너 KTS\n마케터 KJH\nUX기획 KKB"
+        android:textSize="30sp"
+        android:text="천사의  개발 중... 'ㅁ' \n\n개발자 David, KJW\n디자이너 KTS\n마케터 KJH\nUX기획 KKB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

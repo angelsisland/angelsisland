@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 import amacrazy.com.angel.R;
 import amacrazy.com.angel.activity.BoardActivity;
-import amacrazy.com.angel.activity.WarmLetterActivity;
+import amacrazy.com.angel.activity.LetterActivity;
 import amacrazy.com.angel.util.FontUtil;
 
 /**
@@ -29,6 +29,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     ImageView waveView1;
     ImageView waveView2;
+
+    ImageView cloudLeft;
+    ImageView cloudRight;
+    ImageView cloudMiddle;
 
 
     @Override
@@ -46,7 +50,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 intent.putExtra("category", "worry");
                 break;
             case R.id.main_praise3:
-                activityClass = WarmLetterActivity.class;
+                activityClass = LetterActivity.class;
                 break;
         }
         intent.setClass(context, activityClass);
@@ -73,6 +77,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         anim.setRepeatCount(-1);
         waveView1.startAnimation(anim);
         waveView2.startAnimation(anim);
+
+        Animation animL = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0, Animation.RELATIVE_TO_SELF, 2.45f,
+                Animation.RELATIVE_TO_PARENT, 0, Animation.RELATIVE_TO_PARENT, 0);
+        Animation animM = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 1, Animation.RELATIVE_TO_PARENT, -0.6f,
+                Animation.RELATIVE_TO_PARENT, 0, Animation.RELATIVE_TO_PARENT, 0);
+        Animation animR = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_PARENT, -0.55f,
+                Animation.RELATIVE_TO_PARENT, 0, Animation.RELATIVE_TO_PARENT, 0);
+
+        animL.setDuration(20000);
+        animL.setRepeatCount(-1);
+
+        animM.setDuration(20000);
+        animM.setRepeatCount(-1);
+
+        animR.setDuration(20000);
+        animR.setRepeatCount(-1);
+
+        cloudLeft = (ImageView)v.findViewById(R.id.cloud_left);
+        cloudMiddle = (ImageView)v.findViewById(R.id.cloud_middle);
+        cloudRight = (ImageView)v.findViewById(R.id.cloud_right);
+        cloudLeft.startAnimation(animL);
+        cloudRight.startAnimation(animR);
+        cloudMiddle.startAnimation(animM);
+
         return v;
     }
 }

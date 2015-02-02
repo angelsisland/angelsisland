@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -13,7 +12,6 @@ import amacrazy.com.angel.R;
 import amacrazy.com.angel.fragment.ExtraFragment;
 import amacrazy.com.angel.fragment.HomeFragment;
 import amacrazy.com.angel.fragment.MyPageFragment;
-import amacrazy.com.angel.fragment.SelectWritingFragment;
 import amacrazy.com.angel.util.FontActionbarActivity;
 
 
@@ -32,14 +30,16 @@ public class MainActivity extends FontActionbarActivity implements View.OnClickL
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (viewId) {
             case R.id.img_button1:
+                getSupportActionBar().setTitle("마이페이지");
                 fragmentTransaction.replace(containerId, new MyPageFragment());
                 fragmentTransaction.commit();
                 break;
             case R.id.img_button2:
-                fragmentTransaction.replace(containerId, new SelectWritingFragment());
-                fragmentTransaction.commit();
+                Intent intent = new Intent(this, SelectWritingActivity.class);
+                startActivity(intent);
                 break;
             case R.id.img_button3:
+                getSupportActionBar().setTitle("만든 이");
                 fragmentTransaction.replace(containerId, new ExtraFragment());
                 fragmentTransaction.commit();
                 break;
@@ -51,6 +51,7 @@ public class MainActivity extends FontActionbarActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("천사의 섬");
         imgButton1 = (ImageButton)findViewById(R.id.img_button1);
         imgButton2 = (ImageButton)findViewById(R.id.img_button2);
         imgButton3 = (ImageButton)findViewById(R.id.img_button3);
@@ -61,16 +62,9 @@ public class MainActivity extends FontActionbarActivity implements View.OnClickL
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(containerId, new MyPageFragment());
-        fragmentTransaction.add(containerId, new SelectWritingFragment());
         fragmentTransaction.add(containerId, new ExtraFragment());
         fragmentTransaction.add(containerId, new HomeFragment());
         fragmentTransaction.commit();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
@@ -78,14 +72,10 @@ public class MainActivity extends FontActionbarActivity implements View.OnClickL
         int id = item.getItemId();
 
         if (id == R.id.actionbar_home) {
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            getSupportFragmentManager().beginTransaction().replace(containerId, new HomeFragment()).commit();
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }

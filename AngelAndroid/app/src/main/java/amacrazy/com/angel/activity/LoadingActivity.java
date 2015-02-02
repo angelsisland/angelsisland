@@ -92,7 +92,7 @@ public class LoadingActivity extends FontActivity {
                             */
                             Intent intent = new Intent();
                             SharedPreferences info = getSharedPreferences("info", MODE_PRIVATE);
-                            boolean isFirst = true;
+                            boolean isFirst = false;
 
 
                             if (isFirst) {

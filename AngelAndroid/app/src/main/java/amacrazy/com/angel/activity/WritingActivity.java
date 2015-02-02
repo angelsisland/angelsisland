@@ -44,6 +44,8 @@ public class WritingActivity extends FontActionbarActivity implements View.OnCli
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
+        setActionBarTitle();
+
         titleEdit = (EditText) findViewById(R.id.writing_praise_title_edit);
         bodyEdit = (EditText) findViewById(R.id.writing_praise_body_edit);
 
@@ -100,5 +102,12 @@ public class WritingActivity extends FontActionbarActivity implements View.OnCli
         Writing writing = new Writing(category, title, contents, photo);
         httpHelper.connect("/api/write", "POST", writing, null);
         //사진 전송하기
+    }
+
+    private void setActionBarTitle() {
+        if(category.equals("praise"))
+            getSupportActionBar().setTitle("자랑 글쓰기");
+        else
+            getSupportActionBar().setTitle("고민 글쓰기");
     }
 }

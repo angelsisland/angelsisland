@@ -38,4 +38,5 @@ public class FontActivity extends Activity {
                 setGlobalFont((ViewGroup)child);
         }
     }
+
 }

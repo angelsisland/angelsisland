@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout
-    android:background="#FFFFFF"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="#FFFFFF">
 
     <RelativeLayout
-        android:id="@+id/receiving_top"
+        android:id="@+id/board_top"
         android:layout_marginTop="36dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,14 +13,15 @@
 
         <ImageView
             android:id="@+id/left_wing"
-            android:layout_toLeftOf="@+id/receiving_logo"
+            android:layout_toLeftOf="@+id/board_logo"
             android:src="@drawable/wing_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/receiving_logo"
-            android:text="내가 제일 잘 나가"
+            android:id="@+id/board_logo"
+            android:text="title"
+            android:singleLine="true"
             android:textSize="20sp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -31,26 +30,32 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:layout_toRightOf="@+id/receiving_logo"
+            android:layout_toRightOf="@+id/board_logo"
             android:src="@drawable/wing_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/receiving_list"
-        android:divider="#00000000"
-        android:fadingEdge="none"
-        android:dividerHeight="0px"
-        android:listSelector="@android:color/transparent"
-        android:layout_below="@+id/receiving_top"
+    <RelativeLayout
+        android:layout_below="@+id/board_top"
+        android:layout_marginTop="38dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43.3dp"
-        android:paddingTop="21dp"
-        android:paddingBottom="12.3dp"
-        android:background="@drawable/board_back"
-        android:layout_width="306.6dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="27dp"/>
+        android:background="@drawable/back_blu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:background="@drawable/textbox"
+            android:layout_width="277.3dp"
+            android:layout_height="304dp">
+
+            <TextView
+                android:id="@+id/letter_contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

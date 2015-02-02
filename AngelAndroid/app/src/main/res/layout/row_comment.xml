@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16.6dp">
+
+    <RelativeLayout
+        android:background="@drawable/blue_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/circle"
+            android:layout_marginLeft="7.6dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/character_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/gray_bar"
+            android:layout_marginLeft="9.3dp"
+            android:layout_toRightOf="@id/circle"
+            android:layout_centerInParent="true"
+            android:src="@drawable/line_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/gray_bar"
+            android:layout_toLeftOf="@+id/comment_report"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="TEDIOUS"
+                android:id="@+id/row_comment_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="와 짱짱이에요."
+                android:layout_marginTop="4dp"
+                android:id="@+id/row_comment_contents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/comment_report"
+            android:layout_marginRight="11.3dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/bad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -9,6 +9,18 @@ public class Writing {
     private String contents;
     private String photo;
     private int commentNum;
+    private int wid;
+
+    public int getUid() {
+        return uid;
+    }
+
+    private int uid;
+
+    public int getWid() {
+        return wid;
+    }
+
 
     public Writing(String category, String title, String contents, String photo) {
         this.category = category;

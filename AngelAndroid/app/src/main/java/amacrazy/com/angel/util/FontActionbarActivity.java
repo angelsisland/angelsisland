@@ -27,7 +27,6 @@ public class FontActionbarActivity extends ActionBarActivity{
 
         ViewGroup root = (ViewGroup) findViewById(android.R.id.content);
         setGlobalFont(root);
-
     }
 
     void setGlobalFont(ViewGroup root) {

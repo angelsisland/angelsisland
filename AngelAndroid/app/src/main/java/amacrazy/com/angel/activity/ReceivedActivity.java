@@ -1,6 +1,9 @@
 package amacrazy.com.angel.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -16,33 +19,38 @@ import amacrazy.com.angel.util.FontActionbarActivity;
 /**
  * Created by choi on 2015. 1. 26..
  */
-public class ReceivedActivity extends FontActionbarActivity {
+public class ReceivedActivity extends FontActionbarActivity implements AdapterView.OnItemClickListener{
     private String category;
+    List<Writing> list;
+    List<Integer> clist;
+    ListView listView;
+    RowAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receiving);
         category = getIntent().getStringExtra("category");
-        List<Writing> writingList = new ArrayList<>();
-        List<Integer> countList = new ArrayList<>();
-        ListView listView = (ListView)findViewById(R.id.receiving_list);
-        RowAdapter adapter;
-        countList.addAll(DummyData.integers);
+        list = new ArrayList<>();
+        clist = new ArrayList<>();
+        listView = (ListView)findViewById(R.id.receiving_list);
+        listView.setOnItemClickListener(this);
+        clist.addAll(DummyData.integers);
         if(category.equals("praise")) {
-            writingList.addAll(DummyData.dummyPraiseWriting);
-            adapter = new RowAdapter(this, R.layout.row_writing, writingList, "mine",countList);
+            list.addAll(DummyData.dummyPraiseWriting);
+            adapter = new RowAdapter(this, R.layout.row_writing, list, "mine",clist);
         }
         else {
-            writingList.addAll(DummyData.dummyWorryWriting);
-            adapter = new RowAdapter(this, R.layout.row_writing, writingList, "mine", countList);
+            list.addAll(DummyData.dummyWorryWriting);
+            adapter = new RowAdapter(this, R.layout.row_writing, list, "mine", clist);
         }
         listView.setAdapter(adapter);
 
-        //Network 으로 받아오기
+        //Network 으로 받아오기, writing, integer 리스트 받아오기
         List<Integer> commentNum = new ArrayList<>();
 
         setLogo();
+        setActionBarTitle();
     }
 
     private void setLogo() {
@@ -55,5 +63,21 @@ public class ReceivedActivity extends FontActionbarActivity {
             logo.setText(praise);
         else
             logo.setText(worry);
+    }
+
+    private void setActionBarTitle() {
+        if(category.equals("praise"))
+            getSupportActionBar().setTitle("내가 받은 칭찬들");
+        else
+            getSupportActionBar().setTitle("내가 받은 위로들");
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this, ReadingReceivingActivity.class);
+        intent.putExtra("category", category);
+        intent.putExtra("contents", list.get(position).getContents());
+        intent.putExtra("wid", list.get(position).getWid());
+        startActivity(intent);
     }
 }

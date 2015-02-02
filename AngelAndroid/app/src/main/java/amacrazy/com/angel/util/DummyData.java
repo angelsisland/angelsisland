@@ -2,6 +2,8 @@ package amacrazy.com.angel.util;
 
 import java.util.ArrayList;
 
+import amacrazy.com.angel.model.Comment;
+import amacrazy.com.angel.model.Letter;
 import amacrazy.com.angel.model.Writing;
 
 /**
@@ -12,6 +14,8 @@ public class DummyData {
     public static ArrayList<Writing> dummyPraiseWriting = new ArrayList<>();
     public static ArrayList<Writing> dummyWorryWriting = new ArrayList<>();
     public static ArrayList<Integer> integers = new ArrayList<>();
+    public static ArrayList<Comment> comments = new ArrayList<>();
+    public static ArrayList<Letter> letters = new ArrayList<>();
 
     static {
         dummyPraiseWriting.add(new Writing("praise", "오늘 착한 일!!dummy", "dummy data", null));
@@ -28,6 +32,17 @@ public class DummyData {
         integers.add(2);
         integers.add(3);
         integers.add(4);
+
+        comments.add(new Comment(1, "정말 칭찬칭찬 합니다.", "철수"));
+        comments.add(new Comment(1, "정말 칭찬칭찬2 합니다.", "영미"));
+        comments.add(new Comment(1, "정말 칭찬칭찬3 합니다.", "감자"));
+        comments.add(new Comment(1, "정말 칭찬칭찬4 합니다.", "감자천사"));
+
+        letters.add(new Letter("titledummy1", "contentsdummy1"));
+        letters.add(new Letter("titledummy1", "contentsdummy2"));
+        letters.add(new Letter("titledummy1", "contentsdummy3"));
+        letters.add(new Letter("titledummy1", "contentsdummy4"));
+        letters.add(new Letter("titledummy1", "contentsdummy5"));
     }
 
 }
