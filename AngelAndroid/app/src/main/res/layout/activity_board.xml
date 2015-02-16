@@ -14,13 +14,13 @@
 
         <ImageView
             android:id="@+id/left_wing"
-            android:layout_toLeftOf="@+id/board_logo"
+            android:layout_toLeftOf="@+id/letter_detail_title"
             android:src="@drawable/wing_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/board_logo"
+            android:id="@+id/letter_detail_title"
             android:text="당신의 칭찬을 기다립니다"
             android:textSize="20sp"
             android:layout_marginLeft="10dp"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:layout_toRightOf="@+id/board_logo"
+            android:layout_toRightOf="@+id/letter_detail_title"
             android:src="@drawable/wing_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -46,43 +46,22 @@
         android:layout_marginTop="43.3dp"
         android:paddingTop="21dp"
         android:paddingBottom="12.3dp"
-        android:background="@drawable/board_back"
+        android:background="@drawable/back_grey_2"
         android:layout_width="306.6dp"
         android:layout_height="273.3dp" />
 
     <RelativeLayout
-        android:id="@+id/board_received_box"
         android:layout_below="@+id/board_list"
-        android:layout_width="wrap_content"
+        android:layout_alignRight="@+id/board_list"
+        android:layout_alignLeft="@+id/board_list"
         android:layout_marginTop="19.3dp"
-        android:layout_alignLeft="@id/board_list"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/board_received"
-            android:background="@drawable/receive_graybox_notselect"
-            android:layout_width="96dp"
-            android:layout_height="80dp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/receive_icon" />
-    </RelativeLayout>
-
-    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/board_received_box"
-        android:layout_toRightOf="@+id/board_received_box"
-        android:layout_marginLeft="6.6dp"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/board_write"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/writing_bluebox" />
 

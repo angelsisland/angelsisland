@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <ImageView
+        android:id="@+id/blue_blue_back"
+        android:background="#CAEAF1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/actionbar_title_text"
+        android:text="천사의 섬"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
+
+    <ImageView
+        android:id="@+id/actionbar_home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/blue_blue_back"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="26dp"
+        android:background="@null"
+        android:src="@drawable/home_icon_white" />
+
+</RelativeLayout>

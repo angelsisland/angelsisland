@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     android:background="#FFFFFF">
 
     <RelativeLayout
@@ -78,7 +79,7 @@
         android:layout_marginTop="11dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/my_page_profile_img"
-        android:id="@+id/my_page_status_label"
+        android:id="@+id/my_page_status_nick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -87,7 +88,7 @@
         style="@style/CustomProgressBarHorizontal"
         android:layout_centerHorizontal="true"
         android:visibility="visible"
-        android:layout_below="@id/my_page_status_label"
+        android:layout_below="@id/my_page_status_nick"
         android:layout_marginTop="15.6dp"
         android:progressDrawable="@drawable/level_progressbar"
         android:background="@drawable/levelup_zero"

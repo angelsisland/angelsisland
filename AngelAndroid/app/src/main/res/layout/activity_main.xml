@@ -5,7 +5,6 @@
 
     <FrameLayout
         android:id="@+id/main_frame"
-        android:clickable="true"
         android:layout_below="@+id/main_button_box"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="2.7dp"
         android:orientation="horizontal"
-        android:layout_height="64dp">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/img_button1"
@@ -24,7 +23,7 @@
             android:layout_weight="1"
             android:src="@drawable/mypage_icon"
             android:background="@drawable/mypage_back"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
 
         <ImageButton
             android:id="@+id/img_button2"
@@ -32,7 +31,7 @@
             android:layout_weight="1"
             android:src="@drawable/writing_icon"
             android:background="@drawable/writing_back"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
 
         <ImageButton
             android:id="@+id/img_button3"
@@ -40,7 +39,7 @@
             android:layout_weight="1"
             android:src="@drawable/more_icon"
             android:background="@drawable/more_back"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,20 +1,27 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'angel'
+            keyPassword 'tmdgml1'
+            storeFile file('/Users/choi/kudos/AngelAndroid/app/signature/release.jks')
+            storePassword 'tmdgml1'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
-        applicationId "amacrazy.com.angel"
+        applicationId "angel.island"
         minSdkVersion 9
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+
+        versionName "1.0.1"
     }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        angel_beta {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -25,4 +32,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.facebook.android:facebook-android-sdk:3.22.0'
+    compile 'com.googlecode.android-query:android-query:0.25.9'
 }

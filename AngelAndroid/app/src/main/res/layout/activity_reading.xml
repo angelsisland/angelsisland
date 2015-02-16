@@ -55,6 +55,7 @@
         android:layout_below="@+id/reading_profile_container"
         android:background="@drawable/text_box"
         android:layout_width="307dp"
+        android:minHeight="60dp"
         android:layout_height="197.6dp"
         android:padding="14dp">
 
